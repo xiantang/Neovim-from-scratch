@@ -14,10 +14,10 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 -- keybindings
 local opt = { noremap = true, silent = true }
 vim.g.mapleader = " "
-vim.keymap.set("n", "<C-l>", "<C-w>l", opt)
-vim.keymap.set("n", "<C-h>", "<C-w>h", opt)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opt)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opt)
+vim.keymap.set({ "n", "t" }, "<C-h>", "<CMD>NavigatorLeft<CR>")
+vim.keymap.set({ "n", "t" }, "<C-l>", "<CMD>NavigatorRight<CR>")
+vim.keymap.set({ "n", "t" }, "<C-k>", "<CMD>NavigatorUp<CR>")
+vim.keymap.set({ "n", "t" }, "<C-j>", "<CMD>NavigatorDown<CR>")
 vim.keymap.set("n", "<Leader>v", "<C-w>v", opt)
 vim.keymap.set("n", "<Leader>s", "<C-w>s", opt)
 vim.keymap.set("n", "<Leader>[", "<C-o>", opt)
@@ -116,6 +116,12 @@ require("lazy").setup({
 			-- convert
 			vim.cmd.cnoreabbrev([[git Git]])
 			vim.cmd.cnoreabbrev([[gp Git push]])
+		end,
+	},
+	{
+		"numToStr/Navigator.nvim",
+		config = function()
+			require("Navigator").setup()
 		end,
 	},
 	{
