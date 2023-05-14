@@ -41,7 +41,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"tpope/vim-rhubarb",
-		cmd = "GBrowse",
+		event = "VeryLazy",
+	},
+	{
+		"rhysd/conflict-marker.vim",
+		event = "VeryLazy",
 	},
 	{
 		event = "VeryLazy",
