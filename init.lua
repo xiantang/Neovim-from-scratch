@@ -40,6 +40,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
+		"tpope/vim-rhubarb",
+		cmd = "GBrowse",
+	},
+	{
 		event = "VeryLazy",
 		"hrsh7th/nvim-cmp",
 		dependencies = {
