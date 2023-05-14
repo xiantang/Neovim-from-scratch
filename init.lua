@@ -67,6 +67,13 @@ require("lazy").setup({
 	},
 	{
 		event = "VeryLazy",
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
+	{
+		event = "VeryLazy",
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
 			local null_ls = require("null-ls")
