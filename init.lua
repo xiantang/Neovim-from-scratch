@@ -1,5 +1,6 @@
 local set = vim.o
 set.number = true
+set.encoding = "UTF-8"
 set.relativenumber = true
 set.clipboard = "unnamed"
 -- 在 copy 后高亮
@@ -56,6 +57,7 @@ autocmd FileType nerdtree setlocal relativenumber
 		end,
 		dependencies = {
 			"Xuyuanp/nerdtree-git-plugin",
+			"ryanoasis/vim-devicons",
 		},
 	},
 	{
