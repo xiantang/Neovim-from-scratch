@@ -54,6 +54,9 @@ let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 		]])
 		end,
+		dependencies = {
+			"Xuyuanp/nerdtree-git-plugin",
+		},
 	},
 	{
 		"tpope/vim-rhubarb",
