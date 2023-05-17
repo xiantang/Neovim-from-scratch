@@ -377,3 +377,6 @@ else
 end
 
 -- persistence on start
+vim.api.nvim_set_hl(0, "@lsp.type.variable.lua", { link = "Normal" })
+vim.api.nvim_set_hl(0, "Identifier", { link = "Normal" })
+vim.api.nvim_set_hl(0, "TSVariable", { link = "Normal" })
