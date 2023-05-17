@@ -359,5 +359,11 @@ cmp.setup.cmdline(":", {
 	}),
 })
 
+local args = vim.api.nvim_get_vvar("argv")
+-- embed
+if #args > 2 then
+else
+	require("persistence").load({ last = true })
+end
+
 -- persistence on start
-require("persistence").load({ last = true })
