@@ -495,6 +495,17 @@ dap.configurations.python = {
 			return "/usr/local/bin/python"
 		end,
 	},
+	{
+		type = "python",
+		request = "attach",
+		name = "Attach remote",
+		connect = function()
+			local host = vim.fn.input("Host [127.0.0.1]: ")
+			host = host ~= "" and host or "127.0.0.1"
+			local port = tonumber(vim.fn.input("Port [5678]: ")) or 5678
+			return { host = host, port = port }
+		end,
+	},
 }
 
 require("dapui").setup()
@@ -507,3 +518,22 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
 	dapui.close()
 end
+
+vim.keymap.set("n", "<leader>dr", function()
+	require("dap").continue()
+end)
+vim.keymap.set("n", "<leader>de", function()
+	require("dap").toggle_breakpoint()
+end)
+vim.keymap.set("n", "<leader>dn", function()
+	require("dap").step_over()
+end)
+vim.keymap.set("n", "<leader>ds", function()
+	require("dap").step_into()
+end)
+vim.keymap.set("n", "<leader>do", function()
+	require("dap").step_out()
+end)
+vim.keymap.set("n", "<leader>dc", function()
+	require("dap").disconnect()
+end)
