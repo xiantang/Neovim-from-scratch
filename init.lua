@@ -48,7 +48,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- color scheme
-vim.cmd.colorscheme("base16-tender")
+vim.cmd.colorscheme("darcula-dark")
 
 local args = vim.api.nvim_get_vvar("argv")
 -- embed
